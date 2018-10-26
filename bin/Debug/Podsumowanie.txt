@@ -1,0 +1,5 @@
+Podsumowanie gry: 
+Maksymalny Poziom: 3 
+Ilosc Punktow: 1285 
+Calkowity czas dmuchania w milisekundach: 216
+

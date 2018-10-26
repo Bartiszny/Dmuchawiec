@@ -1,0 +1,11 @@
+C:\C#\Gra\bin\Debug\Gra.exe.config
+C:\C#\Gra\bin\Debug\Gra.XML
+C:\C#\Gra\bin\Debug\Gra.exe
+C:\C#\Gra\bin\Debug\Gra.pdb
+C:\C#\Gra\obj\Debug\Gra.csprojResolveAssemblyReference.cache
+C:\C#\Gra\obj\Debug\Gra.Dmuchawiec.resources
+C:\C#\Gra\obj\Debug\Gra.Okno.resources
+C:\C#\Gra\obj\Debug\Gra.Properties.Resources.resources
+C:\C#\Gra\obj\Debug\Gra.csproj.GenerateResource.Cache
+C:\C#\Gra\obj\Debug\Gra.exe
+C:\C#\Gra\obj\Debug\Gra.pdb

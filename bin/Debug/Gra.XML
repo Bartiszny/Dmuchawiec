@@ -1,0 +1,449 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gra</name>
+    </assembly>
+    <members>
+        <member name="T:Gra.Dmuchawiec">
+            <summary>
+            Klasa obiektu sterowanego - platka dmuchawca
+            </summary>
+        </member>
+        <member name="M:Gra.Dmuchawiec.#ctor">
+            <summary>
+            Konstruktor klasy <c>Dmuchawiec</c>, ustawienia poczatkowe i tekstura
+            </summary>
+        </member>
+        <member name="M:Gra.Dmuchawiec.wznos(System.Double)">
+            <summary>
+            Metoda odpowiedzialna za podnoszenie obiektu
+            </summary>
+            <param name="buff">Zmienna bufora wielkosci skoku obiektu</param>
+        </member>
+        <member name="M:Gra.Dmuchawiec.opadaj">
+            <summary>
+            Metoda odpowiedzialna za opadanie obiektu
+            </summary>
+        </member>
+        <member name="M:Gra.Dmuchawiec.sprawdzKolizaSufit">
+            <summary>
+            Metoda wykrywjaca kolizje obiektu sterowanego z gorna krawedzia planszy
+            </summary>
+            <returns>Wartosc pola klasy <c>bool</c></returns>
+        </member>
+        <member name="M:Gra.Dmuchawiec.sprawdzKolizjaPodloga">
+            <summary>
+            Metoda wykrywjaca kolizje obiektu sterowanego z dolna krawedzia planszy
+            </summary>
+            <returns>Wartosc pola klasy <c>bool</c></returns>
+        </member>
+        <member name="M:Gra.Dmuchawiec.sprawdzKolizjaSciana(Gra.Sciana)">
+            <summary>
+            Metoda wykrywjaca kolizje obiektu sterowanego z przeszkoda
+            </summary>
+            <param name="sciana">Obiekt klasy <c>Sciana</c></param>
+            <returns>Wartosc pola klasy <c>bool</c></returns>
+        </member>
+        <member name="M:Gra.Dmuchawiec.pobierzPozycje">
+            <summary>
+            Metoda pobierajaca pozycje obiektu
+            </summary>
+            <returns>Punkt o wspolrzednych x i y</returns>
+        </member>
+        <member name="F:Gra.Dmuchawiec.x">
+            <summary>
+            Deklaracja pol pozycji i wymiarow
+            </summary>
+        </member>
+        <member name="F:Gra.Dmuchawiec.y">
+            <summary>
+            Deklaracja pol pozycji i wymiarow
+            </summary>
+        </member>
+        <member name="F:Gra.Dmuchawiec.obraz">
+            <summary>
+            Deklaracja pola klasy <c>Image</c>
+            </summary>
+        </member>
+        <member name="P:Gra.Dmuchawiec.Y">
+            <summary>
+            Hermetyzacja pola y
+            </summary>
+        </member>
+        <member name="P:Gra.Dmuchawiec.X">
+            <summary>
+            Hermetyzacja pola x
+            </summary>
+        </member>
+        <member name="P:Gra.Dmuchawiec.Obraz">
+            <summary>
+            Hermetyzacja pola klasy <c>Image</c>
+            </summary>
+        </member>
+        <member name="T:Gra.DoubleBufferedPanel">
+            <summary>
+            Klasa pomocnicza likwidujaca miganie ekranu - zrodlo Internet(Stack OverFlow)
+            </summary>
+        </member>
+        <member name="M:Gra.DoubleBufferedPanel.#ctor">
+            <summary>
+            Konstruktor klasy pomocniczej
+            </summary>
+        </member>
+        <member name="T:Gra.GeneratorScian">
+            <summary>
+            Klasa do generacji scian (przeszkod)
+            </summary>
+        </member>
+        <member name="M:Gra.GeneratorScian.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Konstruktor klasy generujacej sciany
+            </summary>
+            <param name="wysokoscPanelu">Zmienna wysokosci panelu na ktorym dzieje sie rozgrywka</param>
+            <param name="szerokoscPanelu">Zmienna szerokosci panelu na ktorym dzieje sie rozgrywka</param>
+        </member>
+        <member name="M:Gra.GeneratorScian.stworzScianeGorna">
+            <summary>
+            Metoda tworzaca przeszkode(obiekt klasy <c>ScianaGorna</c>)
+            </summary>
+            <returns>Nowy obiekt przeszkody</returns>
+        </member>
+        <member name="M:Gra.GeneratorScian.stworzScianeDolna(System.Int32)">
+            <summary>
+            Metoda tworzaca przeszkode (obiekt klasy <c>ScianaDolna</c>), uzalezniona od wysokosci przeszkody gornej
+            </summary>
+            <param name="wysokoscScianyGornej">Zmienna wysokosci przeszkody gornej</param>
+            <returns>Nowy obiekt przeszkody</returns>
+        </member>
+        <member name="F:Gra.GeneratorScian.generator">
+            <summary>
+            Pola stalych i generatora losowego
+            </summary>
+        </member>
+        <member name="T:Gra.Okno">
+            <summary>
+            Klasa okna dziedziczaca po WinForm - mechanizmy gry
+            </summary>
+        </member>
+        <member name="F:Gra.Okno.dmuchawiec">
+            <summary>
+            Inicjalizacja obiektu klasy <c>Dmuchawiec</c>
+             </summary>
+        </member>
+        <member name="F:Gra.Okno.scianyNaEkranie">
+            <summary>
+            Inicjalizacja listy obiektow klasy <c>Sciana</c>, 
+            </summary>
+        </member>
+        <member name="F:Gra.Okno.generatorScian">
+            <summary>
+            Inicjalizacja obiektu klasy <c>GeneratorScian</c>
+            </summary>
+        </member>
+        <member name="F:Gra.Okno.grafika">
+            <summary>
+            Inicjalizacja obiektu wypelnienia klasy <c>Graphics</c>
+            </summary>
+        </member>
+        <member name="F:Gra.Okno.stopWatch">
+            <summary>
+            Inicjalizacja obiektu klasy <c>Stopwatch</c> - stopera
+            </summary>
+        </member>
+        <member name="F:Gra.Okno.buff">
+            <summary>
+            Deklaracja pola bufora
+            </summary>
+        </member>
+        <member name="F:Gra.Okno.buff2">
+            <summary>
+            Deklaracja pole bufora 2
+            </summary>
+        </member>
+        <member name="F:Gra.Okno.licznikTimera">
+            <summary>
+            Deklaracja pola licznika timera
+            </summary>
+        </member>
+        <member name="F:Gra.Okno.licznikOdleglosci">
+            <summary>
+            Deklaracja pola licznika punktow/odleglosci
+            </summary>
+        </member>
+        <member name="F:Gra.Okno.licznikDmuchania">
+            <summary>
+            Deklaraca pola licznika calkowitego czasu dmuchania
+            </summary>
+        </member>
+        <member name="F:Gra.Okno.licznikPoziomu">
+            <summary>
+            Deklaracja pola licznika poziomow
+            </summary>
+        </member>
+        <member name="F:Gra.Okno.n">
+            <summary>
+            Deklaracja pola interwalu przeszkod
+            </summary>
+        </member>
+        <member name="F:Gra.Okno.startGry">
+            <summary>
+            Deklaracja pola statusu rozpoczecia gry
+            </summary>
+        </member>
+        <member name="F:Gra.Okno.start">
+            <summary>
+            Deklaracja pola stanu gry
+            </summary>
+        </member>
+        <member name="M:Gra.Okno.#ctor">
+            <summary>
+            Konstruktor klasy, inicjalizacna komponentow, klawiszy, timera i jego interwalu 
+            </summary>
+        </member>
+        <member name="M:Gra.Okno.Pole_Paint(System.Object,System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Metoda reagujaca na zdarzenie rysowania pola gry
+            </summary>
+            <param name="sender">Obiekt wysylajacy zdarzenie</param>
+            <param name="e">Obiekt zawierajacy parametry zdarznia</param>
+        </member>
+        <member name="M:Gra.Okno.MainTimer_Tick(System.Object,System.EventArgs)">
+            <summary>
+            Metoda reagujaca na zdarzenie timera - petla programu
+            </summary>
+            <param name="sender">Obiekt wysylajacy zdarzenie</param>
+            <param name="e">Obiekt zawierajacy parametry zdarznia</param>
+        </member>
+        <member name="M:Gra.Okno.dodajScianeNaEkran">
+            <summary>
+            Metoda dodajaca przeszkody na ekran
+            </summary>
+        </member>
+        <member name="M:Gra.Okno.Space_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Metoda reagujaca na zdarznie nacisniecia klawisza spacji - start stopera
+            </summary>
+            <param name="sender">Obiekt wysylajacy zdarzenie</param>
+            <param name="e">Obiekt zawierajacy parametry zdarznia</param>
+        </member>
+        <member name="M:Gra.Okno.Space_KeyUp(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Metoda reagujaca na zdarzenie puszczenia klawisza spacji, zatrzymanie stopera, obliczenie dlugosci skoku 
+            w zaleznosci od zmierzonego czasu i reset stopera
+            </summary>
+            <param name="sender">Obiekt wysylajacy zdarzenie</param>
+            <param name="e">Obiekt zawierajacy parametry zdarznia</param>
+        </member>
+        <member name="M:Gra.Okno.powrot_Click(System.Object,System.EventArgs)">
+            <summary>
+            Metoda reagujaca na zdarzenie klikniecia przycisku "powrot"/"start" - start gry i znikniecie menu
+            </summary>
+            <param name="sender">Obiekt wysylajacy zdarzenie</param>
+            <param name="e">Obiekt zawierajacy parametry zdarznia</param>
+        </member>
+        <member name="M:Gra.Okno.zapisWynikow_Click(System.Object,System.EventArgs)">
+            <summary>
+            Metoda reagujaca na zdarzenie klikniecia przycisku "Zapis Wynikow" - zapisanie wartosci licznikow do pliku (zrodlo-iternet
+            StackOverflow)
+            </summary>
+            <param name="sender">Obiekt wysylajacy zdarzenie</param>
+            <param name="e">Obiekt zawierajacy parametry zdarznia</param>
+        </member>
+        <member name="M:Gra.Okno.zakoncz_Click(System.Object,System.EventArgs)">
+            <summary>
+            Metoda ragujaca na zdarznie nacisniecia przycisku "Zakoncz" - wyjscie z programu
+            </summary>
+            <param name="sender">Obiekt wysylajacy zdarzenie</param>
+            <param name="e">Obiekt zawierajacy parametry zdarznia</param>
+        </member>
+        <member name="M:Gra.Okno.Esc_KeyPress(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Metoda reagujaca na zdarzenie wcisniecia klawisza "Esc" - wywolanie meanu oraz powrot do gry
+            </summary>
+            <param name="sender">Obiekt wysylajacy zdarzenie</param>
+            <param name="e">Obiekt zawierajacy parametry zdarznia</param>
+        </member>
+        <member name="M:Gra.Okno.nowaGra_Click(System.Object,System.EventArgs)">
+            <summary>
+            Metodareagujaca na zdarzenie nacisniecia przycisku "Nowa Gra" - restart programu
+            </summary>
+            <param name="sender">Obiekt wysylajacy zdarzenie</param>
+            <param name="e">Obiekt zawierajacy parametry zdarznia</param>
+        </member>
+        <member name="F:Gra.Okno.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Gra.Okno.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Gra.Okno.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Gra.Okno.MainTimer">
+            <summary>
+            Deklaracja obiektu klasy Timer
+            </summary>
+        </member>
+        <member name="T:Gra.Program">
+            <summary>
+            GLOWNA KLASA MAIN
+            </summary>
+        </member>
+        <member name="T:Gra.Properties.Resources">
+            <summary>
+              Klasa zasobu wymagająca zdefiniowania typu do wyszukiwania zlokalizowanych ciągów itd.
+            </summary>
+        </member>
+        <member name="P:Gra.Properties.Resources.ResourceManager">
+            <summary>
+            Zwraca buforowane wystąpienie ResourceManager używane przez tę klasę.
+            </summary>
+        </member>
+        <member name="P:Gra.Properties.Resources.Culture">
+            <summary>
+              Zastępuje właściwość CurrentUICulture bieżącego wątku dla wszystkich
+              przypadków przeszukiwania zasobów za pomocą tej klasy zasobów wymagającej zdefiniowania typu.
+            </summary>
+        </member>
+        <member name="T:Gra.Sciana">
+            <summary>
+            Klasa przeszkody tworzaca i ustawiajaca przeszkody
+            </summary>
+        </member>
+        <member name="M:Gra.Sciana.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Konstruktor klasy <c>Sciana</c> Pobieranie tekstury
+            </summary>
+            <param name="x">Skladowa pozioma punktu lokalizacji sciany</param>
+            <param name="y">Skladowa pionowa punktu lokalizacji sciany</param>
+            <param name="wysokosc">Ilosc obrazkow skladajacych sie na sciane</param>
+        </member>
+        <member name="M:Gra.Sciana.suwaj">
+            <summary>
+            Metoda przesuwajaca sciane
+            </summary>
+        </member>
+        <member name="M:Gra.Sciana.rysuj(System.Drawing.Graphics)">
+            <summary>
+            Metoda virtualna, tworzenie sciany 
+            </summary>
+            <param name="g">Obiekt klasy <c>Graphics</c> na ktorym odbywa sie rysowanie</param>
+        </member>
+        <member name="M:Gra.Sciana.pobierzPozycje">
+            <summary>
+            Metoda pobierajaca pozycje obiektu
+            </summary>
+            <returns>Punkt o wspolrzednych x i y</returns>
+        </member>
+        <member name="M:Gra.Sciana.czyPozaEkranem">
+            <summary>
+            Metoda sprawdzajaca, czy sciana znajduje sie juz poza ekranem
+            </summary>
+            <returns>Zmienna typu <c>bool</c></returns>
+        </member>
+        <member name="M:Gra.Sciana.wysokoscWPikselach">
+            <summary>
+            Metoda virualna liczaca bezwgledna wysokosc przeszkody
+            </summary>
+            <returns>Wysokosc przeszkody</returns>
+        </member>
+        <member name="F:Gra.Sciana.x">
+            <summary>
+            Deklaracja pol lokalizacji i wysokosci
+            </summary>
+        </member>
+        <member name="F:Gra.Sciana.y">
+            <summary>
+            Deklaracja pol lokalizacji i wysokosci
+            </summary>
+        </member>
+        <member name="F:Gra.Sciana.wysokosc">
+            <summary>
+            Deklaracja pol lokalizacji i wysokosci
+            </summary>
+        </member>
+        <member name="F:Gra.Sciana.obraz">
+            <summary>
+            Deklaracja zmiennej obiektu klasy <c>Image</c>
+            </summary>
+        </member>
+        <member name="P:Gra.Sciana.Wysokosc">
+            <summary>
+            Hermetyzacja pola <c>wysokosc</c>
+            </summary>
+        </member>
+        <member name="P:Gra.Sciana.Y">
+            <summary>
+            Hermetyzacja pola <c>y</c>
+            </summary>
+        </member>
+        <member name="P:Gra.Sciana.X">
+            <summary>
+            Hermetyzacja pola <c>x</c>
+            </summary>
+        </member>
+        <member name="P:Gra.Sciana.Obraz">
+            <summary>
+            Hermetyzacja pola <c>Obraz</c>
+            </summary>
+        </member>
+        <member name="T:Gra.ScianaDolna">
+            <summary>
+            Klasa dziedziczaca po klasie <c>Sciana</c> i odpowiadająca za dolna przeszkode
+            </summary>
+        </member>
+        <member name="M:Gra.ScianaDolna.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Konstruktor klasy. Paramtery odwoluja sie do klasy nadrzednej
+            </summary>
+            <param name="x">Skladowa pozioma punktu lokalizacji</param>
+            <param name="y">Skladowa pionowa punktu lokalizacji</param>
+            <param name="wysokoscSciany">Liczba obrazkow skladajacych sie na obiekt</param>
+        </member>
+        <member name="M:Gra.ScianaDolna.rysuj(System.Drawing.Graphics)">
+            <summary>
+            Metoda przeslaniajaca virtualna metode w klasie nadrzednej, tworzenie sciany 
+            </summary>
+            <param name="g">Obiekt klasy <c>Graphics</c> na ktorym odbywa sie rysowanie</param>
+        </member>
+        <member name="M:Gra.ScianaDolna.wysokoscWPikselach">
+            <summary>
+            Metoda przelaniajaca virualna metode klasy nadrzednej
+            </summary>
+            <returns>Bezwgledna wysokosc sciany</returns>
+        </member>
+        <member name="T:Gra.ScianaGorna">
+            <summary>
+            Klasa dziedziczaca po klasie <c>Sciana</c> i odpowiadająca za gorna przeszkode
+            </summary>
+        </member>
+        <member name="M:Gra.ScianaGorna.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Konstruktor klasy. Paramtery odwoluja sie do klasy nadrzednej
+            </summary>
+            <param name="x">Skladowa pozioma punktu lokalizacji</param>
+            <param name="y">Skladowa pionowa punktu lokalizacji</param>
+            <param name="wysokoscSciany">Liczba obrazkow skladajacych sie na obiekt</param>
+        </member>
+        <member name="M:Gra.ScianaGorna.rysuj(System.Drawing.Graphics)">
+            <summary>
+            Metoda przeslaniajaca virtualna metode w klasie nadrzednej, tworzenie sciany 
+            </summary>
+            <param name="g">Obiekt klasy <c>Graphics</c> na ktorym odbywa sie rysowanie</param>
+        </member>
+        <member name="M:Gra.ScianaGorna.wysokoscWPikselach">
+            <summary>
+            Metoda przelaniajaca virualna metode klasy nadrzednej
+            </summary>
+            <returns>Bezwgledna wysokosc sciany</returns>
+        </member>
+    </members>
+</doc>
